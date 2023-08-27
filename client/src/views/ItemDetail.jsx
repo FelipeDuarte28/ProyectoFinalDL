@@ -15,7 +15,7 @@ const ItemDetail = () => {
   const id = useParams();
 
   const getComentarios = async () => {
-    const data = await fetch("http://localhost:3001/comentarios/" + id.id);
+    const data = await fetch("https://bicimarketplace.onrender.com/comentarios/" + id.id);
     const res = await data.json();
     setLoader(false);
     setComentarios(res)
@@ -57,7 +57,7 @@ const ItemDetail = () => {
   const setProductoFavorito = async () => {
     const idUser = user[0].id;
     const idProduct = product.id;
-    await axios.post("http://localhost:3001/favoritos", { idUser, idProduct })
+    await axios.post("https://bicimarketplace.onrender.com/favoritos", { idUser, idProduct })
   }
 
   const deleteProductoFavaorito = async () => {
@@ -65,7 +65,7 @@ const ItemDetail = () => {
     const idProduct = product.id;
     console.log(idUser);
     try {
-      const response = await axios.delete("http://localhost:3001/usuario/" + idUser + "/publicacion/" + idProduct);
+      const response = await axios.delete("https://bicimarketplace.onrender.com/usuario/" + idUser + "/publicacion/" + idProduct);
       console.log(response)
     } catch (error) {
       console.log(error);
