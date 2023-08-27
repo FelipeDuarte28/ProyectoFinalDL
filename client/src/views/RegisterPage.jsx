@@ -22,7 +22,7 @@ export default function LoginPage() {
     const { nombre, email, contrasena, direccion, ciudad, telefono } = data;
     console.log(data)
     try {
-      await axios.post("http://localhost:3001/register", { nombre, email, contrasena, direccion, ciudad, telefono, fecha_registro:"2021-05-20" })
+      await axios.post("https://bicimarketplace.onrender.com/register", { nombre, email, contrasena, direccion, ciudad, telefono, fecha_registro:"2021-05-20" })
       setAddUser(true);
       setTimeout(() => {
         navigate("/")
