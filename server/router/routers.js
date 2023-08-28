@@ -73,7 +73,7 @@ router.post("/login", checkCredentiaslMiddleware, async (req, res) => {
         const token = jwt.sign({ email }, process.env.SECRET_KEY, { expiresIn: "1h" });
         res.send(token);
     } catch (error) {
-        res.status(error.code || 500).send({ error });
+        res.status(error.code || 500).send({ message: "Error during login", details: error.message });
     }
 })
 
