@@ -8,9 +8,8 @@ app.use(express.json());
 
 app.use(cors({
     origin: "https://bicimarketplacefront.onrender.com",
-    headers: ["Content-Type"],
-    credentials: true,
 }));
+app.options('*', cors())
 
 app.get("/", (req, res) => {
     res.send("Hola desde node")
