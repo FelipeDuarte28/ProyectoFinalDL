@@ -7,11 +7,6 @@ const cors = require("cors");
 app.use(express.json());
 
 app.use(cors({
-    origin: "https://bicimarketplacefront.onrender.com",
-}));
-app.options('*', cors())
-
-app.use(cors({
   origin: ['https://bicimarketplacefront.onrender.com', 'https://bicimarketplace.onrender.com'],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
