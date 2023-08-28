@@ -11,6 +11,12 @@ app.use(cors({
 }));
 app.options('*', cors())
 
+app.use(cors({
+  origin: ['https://bicimarketplacefront.onrender.com', 'https://bicimarketplace.onrender.com'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.get("/", (req, res) => {
     res.send("Hola desde node")
 })
